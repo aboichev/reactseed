@@ -26,7 +26,7 @@ const config = {
   context: path.resolve(__dirname, '../'),
 
   // The entry point for the bundle
-  entry: ['./core/app.js'],
+  entry: ['./src/core/app.js'],
 
   // Options affecting the output of the compilation
   output: {
@@ -71,9 +71,9 @@ const config = {
       {
         test: /\.jsx?$/,
         include: [
-          path.resolve(__dirname, '../components'),
-          path.resolve(__dirname, '../core'),
-          path.resolve(__dirname, '../routes'),
+          path.resolve(__dirname, '../src/containers'),
+          path.resolve(__dirname, '../src/components'),
+          path.resolve(__dirname, '../src/core')
         ],
         loader: 'babel-loader',
         query: extend({}, pkg.babel, { babelrc: false }),
