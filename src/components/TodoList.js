@@ -1,8 +1,9 @@
 import React from 'react';
-import {Todo} from './Todo'
+import {Todo} from './Todo';
+import {ClearAll} from './ClearAll';
 
 export function TodoList(props) {
-  const { todos, toggleTodo, addTodo } = props;
+  const { todos, toggleTodo, addTodo, clearAll } = props;
 
   const onSubmit = (event) => {
     const input = event.target;
@@ -33,6 +34,7 @@ export function TodoList(props) {
           </li>
         ))}
       </ul>
+      <ClearAll clearAll={clearAll} />
     </div>
   );
 }

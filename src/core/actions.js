@@ -17,3 +17,11 @@ export function toggleTodo(id) {
     payload: id
   };
 }
+
+export function clearAll() {
+  console.log('moo');
+  return {
+    type: 'CLEAR_ALL',
+    payload: null
+  };
+}
