@@ -19,7 +19,6 @@ export function toggleTodo(id) {
 }
 
 export function clearAll() {
-  console.log('moo');
   return {
     type: 'CLEAR_ALL',
     payload: null

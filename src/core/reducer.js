@@ -1,22 +1,13 @@
 import { List, Map } from 'immutable';
+import {data} from './mockData';
 
-const init = List([]);
+const init = List(data);
 
-export default function reducer(todos=init, action) {
+export default function reducer(data=init, action) {
   switch(action.type) {
-    case 'ADD_TODO':
-      return todos.push(Map(action.payload));
-    case 'TOGGLE_TODO':
-      return todos.map(t => {
-        if(t.get('id') === action.payload) {
-          return t.update('isDone', isDone => !isDone);
-        } else {
-          return t;
-        }
-      });
     case 'CLEAR_ALL':
       return List([]);
     default:
-      return todos;
+      return data;
   }
 }
