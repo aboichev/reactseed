@@ -1,6 +1,5 @@
 import React from 'react';
-import {Todo} from './Todo';
-import {ClearAll} from './ClearAll';
+import { Todo } from './Todo';
 
 export function TodoList(props) {
   const { todos, toggleTodo, addTodo, clearAll } = props;
@@ -8,10 +7,10 @@ export function TodoList(props) {
   const onSubmit = (event) => {
     const input = event.target;
     const text = input.value;
-    const isEnterKey = (event.which == 13);
+    const isEnterKey = (event.which === 13);
     const isLongEnough = text.length > 0;
 
-    if(isEnterKey && isLongEnough) {
+    if (isEnterKey && isLongEnough) {
       input.value = '';
       addTodo(text);
     }
@@ -34,7 +33,6 @@ export function TodoList(props) {
           </li>
         ))}
       </ul>
-      <ClearAll clearAll={clearAll} />
     </div>
   );
 }

@@ -1,11 +1,7 @@
 import { connect } from 'react-redux';
-import {FormEditor}  from '../components/FormEditor';
+import { FormEditor } from '../components/FormEditor';
 
-export const FormContainer = connect(
-  function mapStateToProps(state) {
-    return { data: state };
-  },
-  function mapDispatchToProps(dispatch) {
-    return {};
-  }
-)(FormEditor);
+const mapStateToProps = (state) => { data: state };
+const mapDispatchToProps = () => {};
+
+export const FormContainer = connect(mapStateToProps, mapDispatchToProps)(FormEditor);

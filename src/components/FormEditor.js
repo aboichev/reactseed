@@ -1,12 +1,10 @@
 import React from 'react';
 import FieldSection from './FieldSection';
 
-export function FormEditor({data}) {
-  console.log('data', data);
-
-  return (
+const FormEditor = ({ data }) => (
     <form>
         {data.map(i => <FieldSection key={i.id} data={i} />)}
     </form>
-  )
-}
+);
+
+export FormEditor;
