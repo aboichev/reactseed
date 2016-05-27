@@ -1,15 +1,17 @@
 import React from 'react';
+import TextBox from './InputFields/TextBox';
+import Dropdown from './InputFields/Dropdown';
+
+const InputComponents = {TextBox, Dropdown};
 
 const FieldSection = ({ data }) => (
   <section>
     <h3>{data.title}</h3>
     <em>{data.subtitle}</em>
-        {data.fields.map(i => (
-          <p key={i.id}>
-            <label htmlFor={i.id}>{i.label}</label>:
-            <input type="text" defaultValue={i.value}></input>
-          </p>)
-        )}
+        {data.fields.map(i => {
+            const InputField = InputComponents[i.type];
+            return (<InputField key={i.id} data={i} />);
+          })}
   </section>
 );
 

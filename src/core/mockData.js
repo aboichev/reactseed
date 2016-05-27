@@ -3,10 +3,10 @@ export const data = [{
   title: 'Section 1',
   subtitle: 'This is a great',
   fields: [{
-    id: '1',
-    label: 'Field 1',
-    type: 'text',
-    value: 'Hello'
+    name: 'fname',
+    label: 'First Name',
+    type: 'TextBox',
+    value: 'John'
   }]
 },
 {
@@ -14,9 +14,9 @@ export const data = [{
   title: 'Section 2',
   subtitle: 'Event better',
   fields: [{
-    id: '1',
+    name: 'field1',
     label: 'Field 1',
-    type: 'text',
+    type: 'TextBox',
     value: 'Hello'
   }]
 }
