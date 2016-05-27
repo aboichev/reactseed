@@ -28,10 +28,11 @@ task('start', () => new Promise(resolve => {
   const bundler = webpack(config);
 
   browserSync({
-    server: {
-      baseDir: 'static',
+	proxy: 'http://localhost:3000',
+	port: 5000,
 
-      middleware: [
+    middleware: [
+
         webpackDevMiddleware(bundler, {
           // IMPORTANT: dev middleware can't access config, so we should
           // provide publicPath by ourselves
@@ -55,7 +56,6 @@ task('start', () => new Promise(resolve => {
           next();
         },
       ],
-    },
 
     // no need to watch '*.js' here, webpack will take care of it for us,
     // including full page reloads if HMR won't work
